@@ -5,6 +5,7 @@
 ![](https://tva1.sinaimg.cn/large/008eGmZEgy1gp7h6c5klqj31fa0p278z.jpg)
 * 3.1.基于以上两个问题，
     1. 建议1:将项目所有依赖的第三方模块版本信息都导出到一个requirements.txt清单文件中，后续只需要执行一个命令即可批量安装所需的所有第三方模块。
+        * 且项目中的arango包，实际为python-arango==4.2.1版本，也是可以通过requirements.txt来统一管理的
         * 同时如果使用pycharm作为代码编辑器，pycharm也会自动识别requirements.txt文件，自动下载安装。且在pycharm安装requirements插件后，后续第三方模块有更新，pycharm也会提示模块的最新版本，点击upgrade即可更新到对应的版本
         ![](https://gblobscdn.gitbook.com/assets%2F-MVAn263L1T9kc8mRyfj%2F-MXP83FtUkWhtfynOqux%2F-MXPIYLXN2h8OxaNAGtH%2F%E6%88%AA%E5%B1%8F2021-04-04%20%E4%B8%8A%E5%8D%888.35.00.png?alt=media&token=88778e06-6740-46a2-9a77-71af1be3c38f)
         
@@ -46,3 +47,6 @@ autotest_env\Scripts\activate.bat
 autotest_env\Scripts\pip install -r requirements.txt
 ```
 * Linux也类似的配置，只是python解释器和pip等工具在bin目录中
+#### 总结
+* 只需要一个人把项目用到的所有依赖导出到一个清单文件中，后续其他接手的同事，只需要执行pip install -r requirements.txt即可
+* 也可以一个人给项目配置虚拟运行环境，后续其他接手的同事，在相同操作系统下，可直接使用虚拟运行环境
